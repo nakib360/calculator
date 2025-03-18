@@ -1,5 +1,9 @@
 function addValue(value){
+    const field = document.getElementById("calculate-feild");
     document.getElementById("calculate-feild").value += value;
+    setTimeout(() => {
+        field.scrollLeft = field.scrollWidth;
+    }, 10);
 }
 
 function deleteValue (){
