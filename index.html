@@ -17,8 +17,9 @@
 </head>
 <body class="bg-[url('images/bg.jpeg')] bg-cover bg-center w-screen h-screen flex justify-center items-center">
     <div class="h-[40rem] w-[22rem] backdrop-blur-lg rounded-3xl px-8 py-10">
-        <input id="calculate-feild" type="text" class=" h-20 overflow-x-scroll whitespace-nowrap text-right pr-2 w-full bg-opacity-0 bg-yellow-200 mt-16 text-4xl focus:outline-none border border-b-black border-l-0 border-r-0 border-t-0" inputmode="none">
-        
+        <input id="calculate-feild" type="text" class=" h-20 overflow-x-scroll whitespace-nowrap text-right pr-2 w-full bg-opacity-0 bg-yellow-200 mt-9 text-4xl focus:outline-none transition-all" inputmode="none">
+        <div id="result-field" class="text-3xl h-10 w-outo text-right transition-all"></div>
+
         <div class=" flex justify-between items-center">
             <div onclick="formatInput()" class="cursor-pointer flex justify-center items-center bg-red-600 h-16 w-16 mt-10 rounded-xl bg-opacity-50 font-bold">AC</div>
             <div onclick="deleteValue()" class="cursor-pointer flex justify-center items-center bg-red-600 h-16 w-16 mt-10 rounded-xl bg-opacity-50 font-bold">⌫</div>
