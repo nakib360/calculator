@@ -1,4 +1,5 @@
 const field = document.getElementById("calculate-feild");
+const resultField = document.getElementById("result-field");
 
 
 function updateFontSize() {
@@ -11,10 +12,16 @@ function updateFontSize() {
     }
 }
 
-function addValue(value) {
-    field.value += value;
-    updateFontSize(); 
 
+function addValue(value) {
+    
+    if (resultField.innerText !== "" && field.value === "") {
+        field.value = resultField.innerText; 
+        resultField.innerText = ""; 
+    }
+
+    field.value += value; 
+    updateFontSize(); 
     setTimeout(() => {
         field.scrollLeft = field.scrollWidth;
     }, 10);
@@ -22,19 +29,22 @@ function addValue(value) {
 
 function deleteValue() {
     field.value = field.value.slice(0, -1);
-    updateFontSize(); 
+    updateFontSize();
 }
 
 function formatInput() {
     field.value = "";
-    document.getElementById("result-field").innerText = "";
-    updateFontSize(); 
+    resultField.innerText = "";
+    updateFontSize();
 }
+
 
 function result() {
     try {
-        document.getElementById("result-field").innerText = eval(field.value);
+        const output = eval(field.value);
+        resultField.innerText = parseFloat(output.toFixed(5)); 
+        field.value = "";
     } catch {
-        document.getElementById("result-field").innerText = "error syntex";
+        resultField.innerText = "error syntax";
     }
 }
